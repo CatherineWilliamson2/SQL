@@ -1,0 +1,25 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, price NUMERIC, quantity INTEGER, department REAL);
+
+INSERT INTO clothing VALUES (1,"shirts", 7, 33, "everyday wear");
+INSERT INTO clothing VALUES (2, "jackets", 25, 20, "outerwear");
+INSERT INTO clothing VALUES (3, "pants", 20, 35, "everyday wear");
+INSERT INTO clothing VALUES (4, "scarves", 5, 45, "outerwear");
+INSERT INTO clothing VALUES (6, "dresses", 25, 40, "everyday wear");
+INSERT INTO clothing VALUES (7, "sandals", 27, 60, "footwear");
+INSERT INTO clothing VALUES (8, "shorts", 12, 22, "everyday wear");
+INSERT INTO clothing VALUES (9, "skirts", 13, 17, "everyday wear");
+INSERT INTO clothing VALUES (10, "gloves", 2, 38, "outerwear");
+INSERT INTO clothing VALUES (11, "socks", 3, 72, "everyday wear");
+INSERT INTO clothing VALUES (12, "underwear", 2, 41, "everyday wear");
+INSERT INTO clothing VALUES (13, "sneakers", 33, 26, "footwear");
+INSERT INTO clothing VALUES (14, "hoodies", 17, 40, "outerwear");
+INSERT INTO clothing VALUES (15, "sweaters", 22, 37, "seasonal");
+
+--display the database ordered by price
+SELECT * FROM clothing WHERE id ORDER BY price;
+
+--what is the avg price of items in everyday wear?
+SELECT AVG(price) "avg everyday wear item price" FROM clothing WHERE department='everyday wear';
+
