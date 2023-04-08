@@ -1,0 +1,54 @@
+/* Create table about the people and what they do here */
+CREATE TABLE persons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER);
+  
+INSERT INTO persons (name, age) VALUES ("Beyonce", 41);
+INSERT INTO persons (name, age) VALUES ("Stevie Wonder", 72);
+INSERT INTO persons (name, age) VALUES ("Angelina Jolie", 47);
+INSERT INTO persons (name, age) VALUES ("Hugh Jackman", 54);
+INSERT INTO persons (name, age) VALUES ("Kim Kardashian", 42);
+INSERT INTO persons (name, age) VALUES ("Jennifer Lawrence", 32);
+INSERT INTO persons (name, age) VALUES ("Chris Evans", 41);
+INSERT INTO persons (name, age) VALUES ("Johnny Depp", 59);
+INSERT INTO persons (name, age) VALUES ("Paris Hilton", 42);
+INSERT INTO persons (name, age) VALUES ("Nicole Richie", 41);
+INSERT INTO persons (name, age) VALUES ("Snoop Dogg", 51);
+INSERT INTO persons (name, age) VALUES ("Nicki Minaj", 40);
+INSERT INTO persons (name, age) VALUES ("Ariana Grande", 29);
+INSERT INTO persons (name, age) VALUES ("Bruno Mars",37);
+INSERT INTO persons (name, age) VALUES ("Harry Styles", 29);
+
+CREATE table occupation (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+    
+INSERT INTO occupation (person_id, name) VALUES (1,"singer");
+INSERT INTO occupation (person_id, name) VALUES (2,"singer");
+INSERT INTO occupation (person_id, name) VALUES (3,"actor");
+INSERT INTO occupation (person_id, name) VALUES (4, "actor");
+INSERT INTO occupation (person_id, name) VALUES (5, "reality star");
+INSERT INTO occupation (person_id, name) VALUES (6, "actor");
+INSERT INTO occupation (person_id, name) VALUES (7, "actor");
+INSERT INTO occupation (person_id, name) VALUES (8, "actor");
+INSERT INTO occupation (person_id, name) VALUES (9, "reality star");
+INSERT INTO occupation (person_id, name) VALUES (10, "reality star");
+INSERT INTO occupation (person_id, name) VALUES (11, "rapper");
+INSERT INTO occupation (person_id, name) VALUES (12, "rapper");
+INSERT INTO occupation (person_id, name) VALUES (13, "singer");
+INSERT INTO occupation (person_id, name) VALUES (14, "singer");
+INSERT INTO occupation (person_id, name) VALUES (15, "singer");
+
+/**What do they do for a living?**/
+SELECT p.name,o.name
+FROM persons p
+JOIN occupation o
+ON p.id=o.person_id;
+
+SELECT p.name,o.name
+FROM persons p
+JOIN occupation o
+ON p.id=o.person_id
+WHERE p.name='Beyonce';
